@@ -25,4 +25,24 @@ with open("C:\\Users\\user\\Desktop\\Comp Sci\\Semester 2\\Software Engineering\
             line = line[7:]
             operation  = "O"
 
+        #next, run through line breaking down each line into points (X1,X2,Y1,Y2)
+
+        #remove and replace 'through' with ','
+        line= line.replace(" through ",",")
+
+        #use first readable comma as divider to seperate numbers
+        divider = line.find(",")
+
+        #find first number behind (:divisor) and set as first point.
+        #follow along sequentially
+        X1 = int(line[:divider])
+
+        line = line[(divider + 1):]
+        divider = line.find(",")
+        Y1 = int(line[:divider])
+        line = line[(divider + 1):]
+        divider = line.find(",")
+        X2 = int(line[:divider])
+        line = line[(divider + 1):]
+        Y2 = int(line)
 
