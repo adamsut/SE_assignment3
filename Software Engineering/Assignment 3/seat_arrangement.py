@@ -1,12 +1,11 @@
 import time
-
-
-
+#import time
 
 Num_OccupiedSeats = 0
 operation = ""
 """program which reads text file to calculate
     number of seats occupied in grid"""
+#intialise start time
 start_time = time.time()
 #using nested for loops and lists create grid for chairs
 grid = [[0 for x in range(1000)] for x in range(1000)]
@@ -55,6 +54,7 @@ with open("C:\\Users\\user\\Desktop\\Comp Sci\\Semester 2\\Software Engineering\
         #using counter monitor the number of seats
         for row in range (X1, (X2+1)):
             for col in range(Y1, (Y2 + 1)):
+                #processing statement
                 if ( row % 100 == 0)& ( col % 100 == 0):
                     print 'processing..'
 
@@ -80,11 +80,10 @@ with open("C:\\Users\\user\\Desktop\\Comp Sci\\Semester 2\\Software Engineering\
                         grid[row][col] = 1
                         if Num_OccupiedSeats  < 1000000:
                             Num_OccupiedSeats += 1
-
-    #print number of occupied seats
-    print("Number of occupied seats: " + str(Num_OccupiedSeats))
-
-    print 'Time for execution:',(time.time()- start_time), 'seconds.'
+    print 'Execution Complete.'    #print number of occupied seats
+    print("\nNumber of occupied seats: " + str(Num_OccupiedSeats))
+    #print time for execution
+    print '\nTime for execution:',(time.time()- start_time), 'seconds.'
 
 
 
