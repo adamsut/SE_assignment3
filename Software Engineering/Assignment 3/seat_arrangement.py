@@ -46,3 +46,36 @@ with open("C:\\Users\\user\\Desktop\\Comp Sci\\Semester 2\\Software Engineering\
         line = line[(divider + 1):]
         Y2 = int(line)
 
+        #go through line, then modifying grid by using an if statement process
+        #using counter monitor the number of seats
+        for row in range (X1, (X2+1)):
+            for col in range(Y1, (Y2 + 1)):
+
+
+                if (operation == "E"):
+                    if grid[row][col] != 0:
+                        grid[row][col] = 0
+                        if Num_OccupiedSeats  > 0:
+                            Num_OccupiedSeats -= 1
+
+                elif (operation == "O"):
+                    if grid[row][col] != 1:
+                        grid[row][col] = 1
+                        if Num_OccupiedSeats  < 1000000:
+                            Num_OccupiedSeats += 1
+
+                else:
+                    if (grid[row][col] == 1):
+                        grid[row][col] = 0
+                        if Num_OccupiedSeats  > 0:
+                            Num_OccupiedSeats -= 1
+                    else:
+                        grid[row][col] = 1
+                        if Num_OccupiedSeats  < 1000000:
+                            Num_OccupiedSeats += 1
+
+    #print number of occupied seats
+    print("Number of occupied seats: " + str(Num_OccupiedSeats))
+
+
+
